@@ -29,7 +29,7 @@ git config --global alias.rebuild "checkout -- ."
 ## Alias
 ```
 co = checkout
-lodag = log --oneline --decorate --all graph
+lodag = log --oneline --decorate --all --graph
 unstage = reset HEAD --
 s = status
 sw = switch
@@ -42,6 +42,7 @@ fo = fetch origin
 pso = push origin
 plo = pull origin
 rebuild = checkout -- .
+ss = status --short
 ```
 
 ## Change name of principal branch
