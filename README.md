@@ -12,4 +12,8 @@ git config --global user.name "John Doope"              # Asignar nombre de usua
 git config --global user.email "johndoope@gmail.com"    # Asignar email de usuario global
 git config --global -e                                  # Ver configuraciones globales
 git config -e                                           # Ver configuraciones de proyecto
+git init                                                # Inicializar un repositorio
+git status                                              # Ver los archivos que tienen cambios
+git add <name>                                          # Agregar un archivo al stage
+git commit -m "Coment"                                  # Crear un commit con mensaje
 ```
