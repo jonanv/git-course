@@ -35,4 +35,6 @@ rv = remote -v
 fo = fetch origin
 pso = push origin
 plo = pull origin
+rebuild = checkout -- .
+```
 ```
