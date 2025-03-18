@@ -44,7 +44,12 @@ plo = pull origin
 rebuild = checkout -- .
 ```
 
-# Cambiar de nombre de la rama master
+# Change name of principal branch
 ```
 git branch -M master
+```
+
+# Config default branch to main
+```
+git config --global init.defaultBranch main
 ```
