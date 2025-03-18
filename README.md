@@ -20,7 +20,10 @@ git checkout -- .                                    # Reconstruir el proyecto a
 git brach                                            # Listar las ramas
 git branch <name>                                    # Crear nombre de rama
 git diff                                             # Ver los cambios entre archivos
-git diff --staged                                     # Ver los cambios entre archivos en el stage
+git diff --staged                                    # Ver los cambios entre archivos en el stage
+git commit -am "message"                             # Agregar un commit de forma abreviada (add message)
+git commit --amend -m "message"                      # Reescribir el commit anterior o correguirlo
+git reset --soft HEAD^                               # 
 ```
 
 ## Create alias
