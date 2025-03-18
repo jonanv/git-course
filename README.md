@@ -18,6 +18,9 @@ git add <name>                                       # Agregar un archivo al sta
 git commit -m "Coment"                               # Crear un commit con mensaje
 git checkout -- .                                    # Reconstruir el proyecto a como estaba antes
 
+# Create alias
+```
+git config --global alias.rebuild "checkout -- ."
 ```
 
 # Alias
