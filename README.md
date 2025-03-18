@@ -19,6 +19,8 @@ git commit -m "Coment"                               # Crear un commit con mensa
 git checkout -- .                                    # Reconstruir el proyecto a como estaba antes
 git brach                                            # Listar las ramas
 git branch <name>                                    # Crear nombre de rama
+git diff                                             # Ver los cambios entre archivos
+git diff --staged                                     # Ver los cambios entre archivos en el stage
 ```
 
 ## Create alias
