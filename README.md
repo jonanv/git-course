@@ -17,6 +17,7 @@ git status                                           # Ver los archivos que tien
 git add <name>                                       # Agregar un archivo al stage
 git commit -m "Coment"                               # Crear un commit con mensaje
 git checkout -- .                                    # Reconstruir el proyecto a como estaba antes
+git brach                                            # Listar las ramas
 git branch <name>                                    # Crear nombre de rama
 ```
 
