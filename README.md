@@ -21,12 +21,12 @@ git brach                                            # Listar las ramas
 git branch <name>                                    # Crear nombre de rama
 ```
 
-# Create alias
+## Create alias
 ```
 git config --global alias.rebuild "checkout -- ."
 ```
 
-# Alias
+## Alias
 ```
 co = checkout
 lodag = log --oneline --decorate --all graph
@@ -44,12 +44,12 @@ plo = pull origin
 rebuild = checkout -- .
 ```
 
-# Change name of principal branch
+## Change name of principal branch
 ```
 git branch -M master
 ```
 
-# Config default branch to main
+## Config default branch to main
 ```
 git config --global init.defaultBranch main
 ```
