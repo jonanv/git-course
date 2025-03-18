@@ -19,3 +19,20 @@ git commit -m "Coment"                               # Crear un commit con mensa
 git checkout -- .                                    # Reconstruir el proyecto a como estaba antes
 
 ```
+
+# Alias
+```
+co = checkout
+lodag = log --oneline --decorate --all graph
+unstage = reset HEAD --
+s = status
+sw = switch
+bsc = branch --show-current
+rank = shortlog -sn --no-merges
+alias = config --get-regexp ^alias\\.
+b = branch
+rv = remote -v
+fo = fetch origin
+pso = push origin
+plo = pull origin
+```
