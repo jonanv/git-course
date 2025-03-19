@@ -23,7 +23,8 @@ git diff                                             # Ver los cambios entre arc
 git diff --staged                                    # Ver los cambios entre archivos en el stage
 git commit -am "message"                             # Agregar un commit de forma abreviada (add message)
 git commit --amend -m "message"                      # Reescribir el commit anterior o correguirlo
-git reset --soft HEAD^                               # 
+git reset --soft HEAD^                               # Revertir el cambio anterior (ejem. ^2)
+git commit --amend                                   # Abre todo el editor para reescribir el commit
 ```
 
 ## Create alias
