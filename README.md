@@ -25,6 +25,10 @@ git commit -am "message"                             # Agregar un commit de form
 git commit --amend -m "message"                      # Reescribir el commit anterior o correguirlo
 git reset --soft HEAD^                               # Revertir el cambio anterior (ejem. ^2)
 git commit --amend                                   # Abre todo el editor para reescribir el commit
+git reset --soft <65ed0b2>                           # Revertir el cambio anterior con HASH
+git reset --mixed <769efb3>                          # Revertir el cambio anterior, no deja en el stage
+git reset --hard <f710079>                           # Revertir el cambio anterior, destructivo
+git reflog                                           # Muestra todo el historial de commits
 ```
 
 ## Create alias
