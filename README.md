@@ -29,6 +29,8 @@ git reset --soft <65ed0b2>                           # Revertir el cambio anteri
 git reset --mixed <769efb3>                          # Revertir el cambio anterior, no deja en el stage
 git reset --hard <f710079>                           # Revertir el cambio anterior, destructivo
 git reflog                                           # Muestra todo el historial de commits
+git mv destruir-mundo.md salvar-mundo.md             # Renombrar archivo
+git rm salvar-mundo.md                               # Eliminar archivo
 ```
 
 ## Create alias
