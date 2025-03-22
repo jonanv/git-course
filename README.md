@@ -31,6 +31,10 @@ git reset --hard <f710079>                           # Revertir el cambio anteri
 git reflog                                           # Muestra todo el historial de commits
 git mv destruir-mundo.md salvar-mundo.md             # Renombrar archivo
 git rm salvar-mundo.md                               # Eliminar archivo
+git checkout <branch-name>                           # Cambiar de rama o crear rama y cambiar
+git switch <branch-name>                             # Cambiar de rama
+git branch -d <branch-name>                          # Eliminar rama
+git branch -d <branch-name> -f                       # Eliminar rama forzadamente
 ```
 
 ## Create alias
