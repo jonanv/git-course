@@ -45,6 +45,12 @@ git show <tag-name>                                  # Ver la informacion de un 
 git stash                                            # Guardar cambios momentaneos
 git stash list                                       # Listar los cambios momentaneos
 git stash pop                                        # Recupera el ultimo stash y lo aplica
+git stash apply stash@{0}                            # Recupera el stash con el id y NO lo borra
+git stash drop stash@{0}                             # Elimina la posision 0 del stash
+git stash show stash@{0}                             # Muestra la info del stash 0
+git stash save "message"                             # Crear un stash con un nombre
+git stash list --stat                                # Lista los stash con mas información
+git stash clear                                      # Limpia todos los stash
 ```
 
 ## Create alias
