@@ -4,3 +4,5 @@
 * Joker
 * Flash reverso
 * Doomsday
+
+# Notas:
