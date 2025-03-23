@@ -36,6 +36,12 @@ git switch <branch-name>                             # Cambiar de rama
 git branch -d <branch-name>                          # Eliminar rama
 git branch -d <branch-name> -f                       # Eliminar rama forzadamente
 git checkout -b <branch-name> -f                     # Crar rama y cambiar a rama inmediatamente
+git tag <tag-name>                                   # Crear una etiqueta
+git tag                                              # Listar las etiquetas
+git tag -d <tag-name>                                # Eliminar una etiqueta
+git tag -a <tag-name> -m "message"                   # Crear una etiqueta con annotate(-a)
+git tag -a <tag-name> HASH -m "message"              # Crear una etiqueta a un commit con el HASH
+git show <tag-name>                                  # Ver la informacion de un tag
 ```
 
 ## Create alias
