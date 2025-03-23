@@ -42,6 +42,9 @@ git tag -d <tag-name>                                # Eliminar una etiqueta
 git tag -a <tag-name> -m "message"                   # Crear una etiqueta con annotate(-a)
 git tag -a <tag-name> HASH -m "message"              # Crear una etiqueta a un commit con el HASH
 git show <tag-name>                                  # Ver la informacion de un tag
+git stash                                            # Guardar cambios momentaneos
+git stash list                                       # Listar los cambios momentaneos
+git stash pop                                        # Recupera el ultimo stash y lo aplica
 ```
 
 ## Create alias
