@@ -51,6 +51,7 @@ git stash show stash@{0}                             # Muestra la info del stash
 git stash save "message"                             # Crear un stash con un nombre
 git stash list --stat                                # Lista los stash con mas información
 git stash clear                                      # Limpia todos los stash
+git rebase <branch-name>                             # Hacer rebase
 ```
 
 ## Create alias
