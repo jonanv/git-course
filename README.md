@@ -58,7 +58,7 @@ git rebase --continue                                # Continuar con el rebase i
 ```
 
 ## Commands GitHub
-````
+```
 git remote add origin https://...... (git rao)       # Conectar con repositorio github
 git push -u origin main              (git puom)      # Hacer push a github
 
