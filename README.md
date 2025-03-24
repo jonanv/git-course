@@ -52,6 +52,7 @@ git stash save "message"                             # Crear un stash con un nom
 git stash list --stat                                # Lista los stash con mas información
 git stash clear                                      # Limpia todos los stash
 git rebase <branch-name>                             # Hacer rebase
+git rebase -i HEAD~4                                 # Hacer rebase itereactivo 4 commits anteriores
 ```
 
 ## Create alias
