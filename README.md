@@ -54,6 +54,7 @@ git stash clear                                      # Limpia todos los stash
 git rebase <branch-name>                             # Hacer rebase
 git rebase -i HEAD~4                                 # Hacer rebase itereactivo 4 commits anteriores
 git checkout -- <file-name>                          # Reconstruir el archivo como estaba antes
+git rebase --continue                                # Continuar con el rebase interactivo
 ```
 
 ## Create alias
