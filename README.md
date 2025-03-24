@@ -53,6 +53,7 @@ git stash list --stat                                # Lista los stash con mas i
 git stash clear                                      # Limpia todos los stash
 git rebase <branch-name>                             # Hacer rebase
 git rebase -i HEAD~4                                 # Hacer rebase itereactivo 4 commits anteriores
+git checkout -- <file-name>                          # Reconstruir el archivo como estaba antes
 ```
 
 ## Create alias
@@ -75,8 +76,9 @@ rv = remote -v
 fo = fetch origin
 pso = push origin
 plo = pull origin
-rebuild = checkout -- .
+rb = checkout -- .
 ss = status --short
+rbf = git checkout --
 ```
 
 ## Change name of principal branch
