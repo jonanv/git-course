@@ -2,7 +2,7 @@
 
 Course of git follow Fernando Herrera´s course in DevTalles
 
-## Commands
+## Commands Git
 ```
 git --version                                        # Ver la versión de git
 git help                                             # Ver comandos ayuda
@@ -55,6 +55,14 @@ git rebase <branch-name>                             # Hacer rebase
 git rebase -i HEAD~4                                 # Hacer rebase itereactivo 4 commits anteriores
 git checkout -- <file-name>                          # Reconstruir el archivo como estaba antes
 git rebase --continue                                # Continuar con el rebase interactivo
+```
+
+## Commands GitHub
+````
+git remote add origin https://...... (git rao)       # Conectar con repositorio github
+git push -u origin main              (git puom)      # Hacer push a github
+
+
 ```
 
 ## Create alias
