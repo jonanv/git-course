@@ -8,7 +8,8 @@ git --version                                        # Ver la versión de git
 git help                                             # Ver comandos ayuda
 git commit                                           # Hacer commit
 git --help config                                    # Ver comandos ayuda de config
-git config --global user.name "John Doope"           # Asignar nombre de usuario global
+git config --global user.name "John Doope"           # Asignar nombre del usuario global
+git config --global user.username "johndoope"        # Asignar nombre de usuario global
 git config --global user.email "johndoope@gmail.com" # Asignar email de usuario global
 git config --global -e                               # Ver configuraciones globales
 git config -e                                        # Ver configuraciones de proyecto
