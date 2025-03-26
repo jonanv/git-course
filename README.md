@@ -63,6 +63,7 @@ git remote add origin https://...... (git rao)       # Conectar con repositorio 
 git push -u origin main              (git puom)      # Hacer push a github
 
 git push --tags                                      # Publicar todas las etiquetas
+git fetch                                            # Actualizar las referencias con el servidor git
 ```
 
 ## Create alias
