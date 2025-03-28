@@ -65,6 +65,8 @@ git push -u origin main              (git puom)      # Hacer push a github
 
 git push --tags                                      # Publicar todas las etiquetas
 git fetch                                            # Actualizar las referencias con el servidor git
+
+git remote add upstream https://...... (git rau)     # Hacer referencia a otro repositorio Fork
 ```
 
 ## Create alias
