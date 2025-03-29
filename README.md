@@ -15,6 +15,7 @@ git config --global -e                               # Ver configuraciones globa
 git config -e                                        # Ver configuraciones de proyecto
 git init                                             # Inicializar un repositorio
 git status                                           # Ver los archivos que tienen cambios
+git status --short                                   # Ver los archivos que tienen cambios forma corta
 git add <name>                                       # Agregar un archivo al stage
 git commit -m "Coment"                               # Crear un commit con mensaje
 git checkout -- .                                    # Reconstruir el proyecto a como estaba antes
@@ -63,11 +64,13 @@ git rebase --continue                                # Continuar con el rebase i
 git remote add origin https://...... (git rao)       # Conectar con repositorio github
 git push -u origin main              (git puom)      # Hacer push a github
 
+git remote add upstream https://...... (git rau)     # Hacer referencia a otro repositorio Fork
+
 git push --tags                                      # Publicar todas las etiquetas
 git fetch                                            # Actualizar las referencias con el servidor git
 git checkout HASH <file-name>                        # Revertir el cambio con el HASH de un archivo
-
-git remote add upstream https://...... (git rau)     # Hacer referencia a otro repositorio Fork
+git status -sb                                       # Ver el estado de la rama
+git status -short --branch                           # Ver el estado de la rama
 ```
 
 ## Create alias
@@ -92,6 +95,7 @@ pso = push origin
 plo = pull origin
 rb = checkout -- .
 ss = status --short
+ssb = status --short --branch
 rbf = git checkout --
 ```
 
