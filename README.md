@@ -71,6 +71,11 @@ git fetch                                            # Actualizar las referencia
 git checkout HASH <file-name>                        # Revertir el cambio con el HASH de un archivo
 git status -sb                                       # Ver el estado de la rama
 git status -short --branch                           # Ver el estado de la rama
+git pull --all                                       # Traer todo del repositorio
+git branch --all                                     # Ver todas las ramas del repositorio
+git branch --a                                       # Ver todas las ramas del repositorio
+git push origin :<branch-name>                       # Eliminar la rama desde el origen
+git remote prune origin                              # Revisa y actualiza las referencias de las ramas
 ```
 
 ## Create alias
@@ -96,7 +101,9 @@ plo = pull origin
 rb = checkout -- .
 ss = status --short
 ssb = status --short --branch
-rbf = git checkout --
+rbf = checkout --
+ba = branch --all
+rpo = remote prune origin
 ```
 
 ## Change name of principal branch
