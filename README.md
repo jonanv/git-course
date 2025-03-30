@@ -76,7 +76,6 @@ git branch --all                                     # Ver todas las ramas del r
 git branch --a                                       # Ver todas las ramas del repositorio
 git push origin :<branch-name>                       # Eliminar la rama desde el origen
 git remote prune origin                              # Revisa y actualiza las referencias de las ramas
-
 ```
 
 ## Create alias
@@ -105,6 +104,9 @@ ssb = status --short --branch
 rbf = checkout --
 ba = branch --all
 rpo = remote prune origin
+t = tag
+ta = tag -a 
+pt = push --tags
 ```
 
 ## Change name of principal branch
