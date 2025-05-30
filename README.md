@@ -59,6 +59,14 @@ git checkout -- <file-name>                          # Reconstruir el archivo co
 git rebase --continue                                # Continuar con el rebase interactivo
 ```
 
+## Commands for delete commit in server
+```
+Para eliminar parte del historial de commits en Git, puedes usar el comando git rebase -i con la opción --interactive para editar el historial de commits de manera interactiva. Luego, en el editor de texto que se abre, puedes marcar los commits que deseas eliminar con la opción drop, guardar y cerrar el editor. Finalmente, puedes forzar la actualización del historial con git push --force
+
+git rebase -i HEAD~1                                 # Hacer rebase itereactivo 4 commits anteriores
+git push --force                                     # Forzar la actualización del historial
+```
+
 ## Commands GitHub
 ```
 git remote add origin https://...... (git rao)       # Conectar con repositorio github
