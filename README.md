@@ -66,6 +66,8 @@ git push -u origin main              (git puom)      # Hacer push a github
 
 git remote add upstream https://...... (git rau)     # Hacer referencia a otro repositorio Fork
 
+git clone --depth=1 <repo>                           # Clonar un repositorio Git sin el historial de commits 
+
 git push --tags                                      # Publicar todas las etiquetas
 git fetch                                            # Actualizar las referencias con el servidor git
 git checkout HASH <file-name>                        # Revertir el cambio con el HASH de un archivo
