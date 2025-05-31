@@ -57,6 +57,7 @@ git rebase <branch-name>                             # Hacer rebase
 git rebase -i HEAD~4                                 # Hacer rebase itereactivo 4 commits anteriores
 git checkout -- <file-name>                          # Reconstruir el archivo como estaba antes
 git rebase --continue                                # Continuar con el rebase interactivo
+git rebase --abort                                   # La rama se volverá al estado anterior a la rebase interactiva
 ```
 
 ## Commands for delete commit in server
