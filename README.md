@@ -85,6 +85,7 @@ git checkout HASH <file-name>                        # Revertir el cambio con el
 git status -sb                                       # Ver el estado de la rama
 git status -short --branch                           # Ver el estado de la rama
 git pull --all                                       # Traer todo del repositorio
+git push --all                                       # Subir todo del repositorio
 git branch --all                                     # Ver todas las ramas del repositorio
 git branch --a                                       # Ver todas las ramas del repositorio
 git push origin :<branch-name>                       # Eliminar la rama desde el origen
@@ -120,6 +121,7 @@ rpo = remote prune origin
 t = tag
 ta = tag -a 
 pt = push --tags
+ce = config -e
 ```
 
 ## Change name of principal branch
