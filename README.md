@@ -13,6 +13,7 @@ git config --global user.username "johndoope"        # Asignar nombre de usuario
 git config --global user.email "johndoope@gmail.com" # Asignar email de usuario global
 git config --global -e                               # Ver configuraciones globales
 git config -e                                        # Ver configuraciones de proyecto
+git config --global --unset user.name                # Eliminar una configuracion global user.name
 git init                                             # Inicializar un repositorio
 git status                                           # Ver los archivos que tienen cambios
 git status --short                                   # Ver los archivos que tienen cambios forma corta
