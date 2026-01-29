@@ -126,6 +126,8 @@ pt = push --tags
 ce = config -e
 ```
 
+[Gist about git alias](https://gist.github.com/jonanv/9c2419dbea9561e742473895e5d437e6)
+
 ## Change name of principal branch
 ```
 git branch -M master
