@@ -137,3 +137,193 @@ git branch -M master
 ```
 git config --global init.defaultBranch main
 ```
+
+# Signing commits with SSH key
+```
+git config --global user.signingkey <SSH_KEY_ID>
+git config --global commit.gpgsign true
+```
+
+## Verify signed commit
+```
+git log --show-signature                           # Verify all commits
+git log --show-signature -1                        # Verify last commit
+```
+
+# Steps to generate SSH key
+🧩 PASO 1 — Ver si ya tienes llave SSH
+
+En PowerShell o Git Bash:
+```
+ls ~/.ssh
+```
+
+Si ves algo como:
+```
+id_ed25519
+id_ed25519.pub
+```
+
+👉 Ya tienes llave, salta al PASO 3
+
+🧩 PASO 2 — Crear llave SSH (si no tienes)
+```
+ssh-keygen -t ed25519 -C "tu_email_de_github@correo.com"
+```
+
+Dale Enter a todo
+(Opcional: ponle passphrase)
+
+🧩 PASO 3 — Subir la llave a GitHub
+
+Copia tu llave pública:
+```
+cat ~/.ssh/id_ed25519.pub
+```
+
+Ve a:
+👉 https://github.com/settings/keys
+
+Haz clic en:
+
+- New SSH Key
+
+Y MUY IMPORTANTE:
+
+- Title: Mi PC trabajo
+- Key type: 🔽 Signing key
+- Pega la llave
+- Save
+
+🧩 PASO 4 — Decirle a Git que firme con SSH
+
+Configura esto:
+```
+git config --global gpg.format ssh
+git config --global user.signingkey ~/.ssh/id_ed25519.pub
+git config --global commit.gpgsign true
+```
+
+🧩 PASO 5 — Arreglar tu commit actual
+
+Firma el commit que ya existe:
+```
+git commit --amend --no-edit -S
+```
+
+🧩 PASO 6 — Push
+```
+git push --force-with-lease
+```
+
+1️⃣ Verifica que Git quedó configurado para firmar con SSH
+
+Corre esto:
+```
+git config --global --get gpg.format
+git config --global --get user.signingkey
+git config --global --get commit.gpgsign
+```
+
+Debe salir algo así:
+```
+ssh
+C:/Users/TU_USUARIO/.ssh/id_ed25519.pub
+true
+```
+
+
+# 🚑 Solución en Git Bash (Windows)
+1️⃣ Arranca el ssh-agent
+
+Ejecuta esto tal cual:
+
+```
+eval "$(ssh-agent -s)"
+```
+
+Deberías ver algo como:
+
+```
+Agent pid 1234
+```
+
+2️⃣ Agrega tu llave SSH
+```
+ssh-add ~/.ssh/id_ed25519
+```
+
+Si te pide passphrase → ponla
+Si no da error → perfecto
+
+3️⃣ Verifica que quedó cargada
+```
+ssh-add -l
+```
+
+Debe mostrar algo como:
+
+```
+256 SHA256:xxxxx id_ed25519 (ED25519)
+```
+
+# ✅ Solución definitiva (haz esto TAL CUAL)
+1️⃣ Crea el archivo que Git necesita
+
+En Git Bash:
+
+```
+mkdir -p ~/.config/git
+touch ~/.config/git/allowed_signers
+```
+
+2️⃣ Mete tu llave pública ahí dentro
+
+Primero copia tu llave:
+
+```
+cat ~/.ssh/id_ed25519.pub
+```
+
+Ahora edita el archivo:
+
+```
+nano ~/.config/git/allowed_signers
+```
+
+Pega esta línea en UNA sola línea:
+
+```
+<USER> <PEGA_AQUÍ_TU_LLAVE_COMPLETA>
+```
+
+Ejemplo real:
+
+```
+pruebauser ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMabc123xyz... tucorreo@dominio.com
+```
+
+Guarda:
+
+- CTRL + O → Enter
+- CTRL + X
+
+3️⃣ Dile a Git que use ese archivo
+```
+git config --global gpg.ssh.allowedSignersFile ~/.config/git/allowed_signers
+```
+
+4️⃣ Verifica que quedó bien
+
+```
+git config --global --list | grep ssh
+```
+
+Debe salir:
+
+```
+gpg.format=ssh
+user.signingkey=~/.ssh/id_ed25519.pub
+gpg.ssh.allowedSignersFile=~/.config/git/allowed_signers
+commit.gpgsign=true
+```
