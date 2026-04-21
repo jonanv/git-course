@@ -60,6 +60,7 @@ git rebase -i HEAD~4                                 # Hacer rebase itereactivo 
 git checkout -- <file-name>                          # Reconstruir el archivo como estaba antes
 git rebase --continue                                # Continuar con el rebase interactivo
 git rebase --abort                                   # La rama se volverá al estado anterior a la rebase interactiva
+git revert -m 1 <hash_del_commit_merge>              # Hacer rollback en git con el hash del merge para revertir cambios
 ```
 
 ## Commands for delete commit in server
