@@ -334,3 +334,90 @@ user.signingkey=~/.ssh/id_ed25519.pub
 gpg.ssh.allowedSignersFile=~/.config/git/allowed_signers
 commit.gpgsign=true
 ```
+
+
+# Setup SSH for authentification
+ 
+Setup SSH for signing commits
+This guide sets up SSH commit signing globally using a dedicated signing key (separate from your auth key).
+Official documentation → 
+
+[SSH README](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key-for-a-hardware-security-key)
+
+1. Create a Dedicated Signing Key
+```
+ssh-keygen -t ed25519 -C "your-email@example.com" -f ~/.ssh/id_ed25519_signing
+```
+
+2. Load the Key into the Agent (and Keychain)
+```
+eval "$(ssh-agent -s)"ssh-add --apple-use-keychain ~/.ssh/id_ed25519_signing
+```
+
+3. Add the Public Key to GitHub as a Signing Key
+Copy your public key:
+ ```
+cat ~/.ssh/id_ed25519_signing.pub
+```
+
+Then on GitHub:
+- Go to Settings → SSH and GPG keys → New SSH key
+  - Set Key type to Signing key
+  - Paste the public key
+  - You should then have one Authentication Key and one Signing Key in Github.
+  - 
+4. Configure Git Globally to Sign Commits
+```
+git config --global gpg.format ssh
+git config --global user.signingkey ~/.ssh/id_ed25519_signing
+git config --global commit.gpgsign true
+```
+
+5. Enable Local Verification (Optional but Recommended)
+Create an allowed signers file:
+```
+mkdir -p ~/.config/gittouch ~/.config/git/allowed_signers
+```
+Add a line to `~/.config/git/allowed_signers` with your public (.pub) key as in:
+ 
+```
+echo "your-email@example.com $(cat ~/.ssh/id_ed25519_signing.pub)" >> ~/.config/git/allowed_signers
+```
+`~/.config/git/allowed_signers` shoudl look like
+
+```
+your-email@example.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAI...
+```
+
+Point Git to it:
+ 
+```
+git config --global gpg.ssh.allowedSignersFile ~/.config/git/allowed_signers
+```
+
+6. Verify Locally
+After your next commit (the first one that should be signed now), run below
+ 
+```
+git log --show-signature -1
+```
+
+Expected output:
+ 
+```
+Good "git" signature for your-email@example.com with ED25519 key ...
+```
+
+7. Verify on GitHub
+Push a commit and confirm it shows Verified.
+
+Common Issues
+
+----------------
+| Issue | Cause |
+| "No signature" on GitHub | Key wasn't added as a Signing key (auth key isn't enough) |
+| "No signature" in `git log --show-signature` | Missing allowedSignersFile or wrong contents |
+| Wrong key used | Check `git config --global user.signingkey` |
+---------------------------------------------------------------
+
+ 
