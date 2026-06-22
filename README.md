@@ -10,6 +10,9 @@ git commit                                           # Hacer commit
 git --help config                                    # Ver comandos ayuda de config
 git config list                                      # Ver configuraciones
 git config --local --list                            # Ver la configuración del proyecto actual (Local)
+git config --local user.username "John Doope"  
+git config --local user.name "johndoope"
+git config --local user.email "johndoope@gmail.com"
 git config --global --list                           # Ver la configuración de tu usuario (Global)
 git config --global user.name "John Doope"           # Asignar nombre del usuario global
 git config --global user.username "johndoope"        # Asignar nombre de usuario global
