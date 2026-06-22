@@ -365,7 +365,7 @@ Then on GitHub:
   - Set Key type to Signing key
   - Paste the public key
   - You should then have one Authentication Key and one Signing Key in Github.
-  - 
+
 4. Configure Git Globally to Sign Commits
 ```
 git config --global gpg.format ssh
@@ -413,11 +413,10 @@ Push a commit and confirm it shows Verified.
 
 Common Issues
 
-----------------
 | Issue | Cause |
+| :--------: | :-----------------------: |
 | "No signature" on GitHub | Key wasn't added as a Signing key (auth key isn't enough) |
 | "No signature" in `git log --show-signature` | Missing allowedSignersFile or wrong contents |
 | Wrong key used | Check `git config --global user.signingkey` |
----------------------------------------------------------------
 
  
