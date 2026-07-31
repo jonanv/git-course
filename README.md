@@ -67,6 +67,7 @@ git checkout -- <file-name>                          # Reconstruir el archivo co
 git rebase --continue                                # Continuar con el rebase interactivo
 git rebase --abort                                   # La rama se volverá al estado anterior a la rebase interactiva
 git revert -m 1 <hash_del_commit_merge>              # Hacer rollback en git con el hash del merge para revertir cambios. La bandera -m 1 es fundamental. Indica a Git que mantenga la línea principal (la rama en la que estabas cuando hiciste el merge).
+git log -S "procesarRemision(remision.id)"           # La opción -S significa "pickaxe search". Git busca todos los commits donde la cantidad de veces que aparece esa cadena cambió.
 ```
 
 ## Commands for delete commit in server
