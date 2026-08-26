@@ -39,6 +39,8 @@ git diff HEAD~1 HEAD                                 # Compara la segunda confir
 git diff HEAD~1 HEAD~2 -- <file-name>                # Ver los cambios entre commits de un archivo especifico
 git diff HEAD <branch-name> -- <file-name>           # Ver los cambios entre commits de un archivo especifico
 git diff <hash> <hash>                               # Ver los cambios entre commits con HASH, el hash mas reciente en segundo lugar
+git diff <branch-name> <branch-name>                 # Ver los cambios entre ramas
+git diff <branch-name> <branch-name> -- <file-name>  # Ver los cambios entre ramas de un archivo especifico
 git commit -am "message"                             # Agregar un commit de forma abreviada (add message)
 git commit --amend -m "message"                      # Reescribir el commit anterior o correguirlo
 git reset --soft HEAD^                               # Revertir el cambio anterior (ejem. ^2)
@@ -55,6 +57,7 @@ git checkout -b <branch-name> -f                     # Crar rama y cambiar a ram
 git switch <branch-name>                             # Cambiar de rama
 git switch -c <branch-name>                          # Crear rama y cambiar a rama inmediatamente
 git branch -d <branch-name>                          # Eliminar rama
+git branch -D <branch-name>                          # Eliminar rama forzadamente
 git branch -d <branch-name> -f                       # Eliminar rama forzadamente
 git tag <tag-name>                                   # Crear una etiqueta
 git tag                                              # Listar las etiquetas
