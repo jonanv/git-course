@@ -49,7 +49,6 @@ git commit --amend --date="AAAA-MM-DD HH:MM:SS"      # Cambia la fecha de un com
 git reset --soft <65ed0b2>                           # Revertir el cambio anterior con HASH
 git reset --mixed <769efb3>                          # Revertir el cambio anterior, no deja en el stage
 git reset --hard <f710079>                           # Revertir el cambio anterior, destructivo
-git reflog                                           # Muestra todo el historial de commits
 git mv destruir-mundo.md salvar-mundo.md             # Renombrar archivo
 git rm salvar-mundo.md                               # Eliminar archivo
 git checkout <branch-name>                           # Cambiar de rama
@@ -157,6 +156,11 @@ git remote prune origin                              # Revisa y actualiza las re
 git remote -v                                        # Ver los remotos del repositorio
 git remote set-url origin git@github-jonanv:jonanv/git-course.git # Cambiar la url del remoto
 git remote add back-up /home/repl/datacamp           # (Añadir un remoto nuevo) Añade el nombre back-up para el repositorio /home/repl/datacamp.
+git reflog                                           # Muestra todo el historial de commits
+git reflog show                                      # Muestra todo el historial de commits
+git reflog show <hash>                               # Muestra todo el historial de commits a partir de un commit especifico
+git reflog expire                                    # Expira las entradas del reflog según la política de expiración predeterminada
+git reflog --since "2 weeks ago" --until "1 week ago"   # Muestra el historial de commits entre fechas
 ```
 
 ## git filter-repo
