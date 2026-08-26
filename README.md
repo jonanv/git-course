@@ -101,6 +101,10 @@ git merge <branch-name>                              # Hacer merge de una rama (
 git merge <branch-name> main                         # Hacer merge desde otra rama, <branch-name> a main (git marge source destination)
 git merge <branch-name> --ff-only                    # Hacer merge de una rama (se esta en main, <brach-name> a main) forzando el fast-forward
 git merge <branch-name> --no-ff                      # Hacer merge de una rama (se esta en main, <brach-name> a main) forzando el no fast-forward (fucion recursivo)
+git merge --squash <branch-name>                      # Hacer merge de una rama (se esta en main, <brach-name> a main) y aplana los commits en uno solo, se debe hacer commit despues de hacer el merge
+git merge -s octopus <branch-name> <branch-name2> <branch-name3> # Integrar múltiples ramas en una sola fusión (merge) utilizando la estrategia de fusión "octopus" (pulpo). Esta estrategia es útil cuando se desea combinar varias ramas en un solo commit de fusión.
+git merge --abort                                    # Abortar el merge
+
 ```
 
 ## Commands for delete commit in server
