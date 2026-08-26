@@ -120,6 +120,8 @@ git clone --depth=1 <repo>                           # Clonar un repositorio Git
 
 git clone --branch <branchname> <remote-repo-url>    # Clonar una rama especifica
 
+git clone <repo> new_repo                            # Clonar un repositorio Git en una carpeta con nombre diferente
+
 git push --tags                                      # Publicar todas las etiquetas
 git fetch                                            # Actualizar las referencias con el servidor git
 git checkout HASH <file-name>                        # Revertir el cambio con el HASH de un archivo
@@ -132,6 +134,9 @@ git branch --all                                     # Ver todas las ramas del r
 git branch --a                                       # Ver todas las ramas del repositorio
 git push origin :<branch-name>                       # Eliminar la rama desde el origen
 git remote prune origin                              # Revisa y actualiza las referencias de las ramas
+git remote -v                                        # Ver los remotos del repositorio
+git remote set-url origin git@github-jonanv:jonanv/git-course.git # Cambiar la url del remoto
+git remote add back-up /home/repl/datacamp           # Añade el nombre back-up para el repositorio /home/repl/datacamp.
 ```
 
 ## Create alias
