@@ -107,6 +107,12 @@ git merge --abort                                    # Abortar el merge
 git rebase --abort                                   # Abortar el rebase
 git rebase --continue                                # Continuar con el rebase
 git rebase <branch-name> --onto <new-base-branch> <old-base-branch>  # Rebase de una rama sobre otra rama base
+git cherry-pick <hash>                               # Aplicar un commit específico de otra rama a la rama actual
+git cherry-pick <hash1> <hash2> <hash3>              # Aplicar varios commits específicos de otra rama a la rama actual
+git cherry-pick -n <hash>                            # Aplicar un commit específico de otra rama a la rama actual sin hacer commit
+git cherry-pick -x <hash>                            # Aplicar un commit específico de otra rama a la rama actual y agregar una referencia al commit original en el mensaje de commit
+git cherry-pick --continue                           # Continuar con el cherry-pick después de resolver conflictos
+git cherry-pick --abort                              # Abortar el cherry-pick
 ```
 
 ## Commands for delete commit in server
