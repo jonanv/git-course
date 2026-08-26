@@ -113,6 +113,12 @@ git cherry-pick -n <hash>                            # Aplicar un commit especí
 git cherry-pick -x <hash>                            # Aplicar un commit específico de otra rama a la rama actual y agregar una referencia al commit original en el mensaje de commit
 git cherry-pick --continue                           # Continuar con el cherry-pick después de resolver conflictos
 git cherry-pick --abort                              # Abortar el cherry-pick
+git bisect start                                      # Iniciar el proceso de búsqueda binaria para encontrar un commit defectuoso
+git bisect bad                                        # Marcar el commit actual como defectuoso
+git bisect good                                       # Marcar el commit actual como bueno
+git bisect reset                                      # Finalizar el proceso de búsqueda binaria y volver al estado original
+git bisect good <hash> <hash> <hash> ...              # Marcar varios commits como buenos
+git bisect run <command>                              # Ejecutar un comando en cada commit durante la búsqueda binaria
 ```
 
 ## Commands for delete commit in server
