@@ -159,6 +159,22 @@ git remote set-url origin git@github-jonanv:jonanv/git-course.git # Cambiar la u
 git remote add back-up /home/repl/datacamp           # (Añadir un remoto nuevo) Añade el nombre back-up para el repositorio /home/repl/datacamp.
 ```
 
+## git filter-repo
+Para eliminar un archivo de todo el historial de commits en Git, puedes usar la herramienta git filter-repo. Esta herramienta permite reescribir el historial de commits y eliminar archivos específicos de manera eficiente. A continuación, se muestra cómo hacerlo:
+
+#### Instalar git-filter-repo
+```pip install git-filter-repo```
+
+#### Remover secret.txt de todo el historial de commits
+```git filter-repo --path secret.txt --invert-paths```
+
+```git filter-repo --path config.init --invert-paths --force```
+
+```
+--path          # Especifica la ruta del archivo o directorio que deseas filtrar. Puedes usar rutas relativas o absolutas.
+--invert-paths  # Indica que deseas eliminar el archivo o directorio especificado en lugar de mantenerlo. Esto significa que todos los commits que contienen ese archivo o directorio serán eliminados del historial.
+```
+
 ## Create alias
 ```
 git config --global alias.rebuild "checkout -- ."
