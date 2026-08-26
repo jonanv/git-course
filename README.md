@@ -97,6 +97,8 @@ git log --since="15 Jul 2024"                        # Ver los commits
 git log --since="15 July 2024"                       # Ver los commits
 git restore --staged <file-name>                     # Quitar un archivo del stage (Area de preparación)
 git restore --staged                                 # Quitar todos los archivos del stage
+git merge <branch-name>                              # Hacer merge de una rama (se esta en main, <brach-name> a main)
+git merge <branch-name> main                         # Hacer merge desde otra rama, <branch-name> a main (git marge source destination)
 ```
 
 ## Commands for delete commit in server
