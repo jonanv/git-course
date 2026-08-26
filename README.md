@@ -99,6 +99,8 @@ git restore --staged <file-name>                     # Quitar un archivo del sta
 git restore --staged                                 # Quitar todos los archivos del stage
 git merge <branch-name>                              # Hacer merge de una rama (se esta en main, <brach-name> a main)
 git merge <branch-name> main                         # Hacer merge desde otra rama, <branch-name> a main (git marge source destination)
+git merge <branch-name> --ff-only                    # Hacer merge de una rama (se esta en main, <brach-name> a main) forzando el fast-forward
+git merge <branch-name> --no-ff                      # Hacer merge de una rama (se esta en main, <brach-name> a main) forzando el no fast-forward (fucion recursivo)
 ```
 
 ## Commands for delete commit in server
