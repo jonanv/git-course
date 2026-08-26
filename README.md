@@ -136,7 +136,7 @@ git push origin :<branch-name>                       # Eliminar la rama desde el
 git remote prune origin                              # Revisa y actualiza las referencias de las ramas
 git remote -v                                        # Ver los remotos del repositorio
 git remote set-url origin git@github-jonanv:jonanv/git-course.git # Cambiar la url del remoto
-git remote add back-up /home/repl/datacamp           # Añade el nombre back-up para el repositorio /home/repl/datacamp.
+git remote add back-up /home/repl/datacamp           # (Añadir un remoto nuevo) Añade el nombre back-up para el repositorio /home/repl/datacamp.
 ```
 
 ## Create alias
