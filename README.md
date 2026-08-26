@@ -21,6 +21,7 @@ git config --global -e                               # Ver configuraciones globa
 git config -e                                        # Ver configuraciones de proyecto
 git config --global --unset user.name                # Eliminar una configuracion global user.name
 git init                                             # Inicializar un repositorio
+git init <name>                                      # Inicializar un repositorio con nombre
 git status                                           # Ver los archivos que tienen cambios
 git status --short                                   # Ver los archivos que tienen cambios forma corta
 git add <name>                                       # Agregar un archivo al stage
@@ -28,8 +29,16 @@ git commit -m "Coment"                               # Crear un commit con mensa
 git checkout -- .                                    # Reconstruir el proyecto a como estaba antes
 git brach                                            # Listar las ramas
 git branch <name>                                    # Crear nombre de rama
+git branch -m <name>                                 # Renombrar rama
+git branch -m <old-name> <new-name>                  # Renombrar rama
 git diff                                             # Ver los cambios entre archivos
+git diff <file-name>                                 # Ver los cambios entre archivos de un archivo especifico
 git diff --staged                                    # Ver los cambios entre archivos en el stage
+git diff --staged <file-name>                        # Ver los cambios entre archivos de un archivo especifico que esta en el stage
+git diff HEAD~1 HEAD                                 # Compara la segunda confirmación más reciente con la más reciente
+git diff HEAD~1 HEAD~2 -- <file-name>                # Ver los cambios entre commits de un archivo especifico
+git diff HEAD <branch-name> -- <file-name>           # Ver los cambios entre commits de un archivo especifico
+git diff <hash> <hash>                               # Ver los cambios entre commits con HASH, el hash mas reciente en segundo lugar
 git commit -am "message"                             # Agregar un commit de forma abreviada (add message)
 git commit --amend -m "message"                      # Reescribir el commit anterior o correguirlo
 git reset --soft HEAD^                               # Revertir el cambio anterior (ejem. ^2)
@@ -42,16 +51,18 @@ git reflog                                           # Muestra todo el historial
 git mv destruir-mundo.md salvar-mundo.md             # Renombrar archivo
 git rm salvar-mundo.md                               # Eliminar archivo
 git checkout <branch-name>                           # Cambiar de rama
+git checkout -b <branch-name> -f                     # Crar rama y cambiar a rama inmediatamente
 git switch <branch-name>                             # Cambiar de rama
+git switch -c <branch-name>                          # Crear rama y cambiar a rama inmediatamente
 git branch -d <branch-name>                          # Eliminar rama
 git branch -d <branch-name> -f                       # Eliminar rama forzadamente
-git checkout -b <branch-name> -f                     # Crar rama y cambiar a rama inmediatamente
 git tag <tag-name>                                   # Crear una etiqueta
 git tag                                              # Listar las etiquetas
 git tag -d <tag-name>                                # Eliminar una etiqueta
 git tag -a <tag-name> -m "message"                   # Crear una etiqueta con annotate(-a)
-git tag -a <tag-name> HASH -m "message"              # Crear una etiqueta a un commit con el HASH
+git tag -a <tag-name> <hash> -m "message"            # Crear una etiqueta a un commit con el HASH
 git show <tag-name>                                  # Ver la informacion de un tag
+git show <hash>                                      # Ver la informacion de un commit con el HASH
 git stash                                            # Guardar cambios momentaneos
 git stash list                                       # Listar los cambios momentaneos
 git stash pop                                        # Recupera el ultimo stash y lo aplica
@@ -66,8 +77,23 @@ git rebase -i HEAD~4                                 # Hacer rebase itereactivo 
 git checkout -- <file-name>                          # Reconstruir el archivo como estaba antes
 git rebase --continue                                # Continuar con el rebase interactivo
 git rebase --abort                                   # La rama se volverá al estado anterior a la rebase interactiva
+git revert HEAD                                      # Hacer rollback al commit anterior
+git revert --no-edit HEAD                            # Hacer rollback al commit anterior sin abrir el editor
+git revert -n HEAD                                   # Hacer rollback al commit anterior sin hacer commit
+git revert --staged <hash_del_commit>                # Hacer rollback con el hash del commit para revertir cambios. La bandera --staged es fundamental. Indica a Git que mantenga los cambios en el stage.
+git revert HEAD --no-edit <file-name>                # Hacer rollback al commit anterior de un archivo especifico sin abrir el editor
 git revert -m 1 <hash_del_commit_merge>              # Hacer rollback en git con el hash del merge para revertir cambios. La bandera -m 1 es fundamental. Indica a Git que mantenga la línea principal (la rama en la que estabas cuando hiciste el merge).
 git log -S "procesarRemision(remision.id)"           # La opción -S significa "pickaxe search". Git busca todos los commits donde la cantidad de veces que aparece esa cadena cambió.
+git log -2                                           # Ver los ultimos 2 commits (confirmaciones)
+git log -2 README.md                                 # Ver los ultimos 2 commits de un archivo especifico
+git log --since="Month Day Year" --until="Month Day Year"  # Ver los commits entre fechas
+git log --since="2023-01-01" --until="2023-12-31"    # Ver los commits entre fechas
+git log --since="yesterday" --until="today"          # Ver los commits entre fechas
+git log --since="1 week ago" --until="today"         # Ver los commits
+git log --since="15 Jul 2024"                        # Ver los commits
+git log --since="15 July 2024"                       # Ver los commits
+git restore --staged <file-name>                     # Quitar un archivo del stage (Area de preparación)
+git restore --staged                                 # Quitar todos los archivos del stage
 ```
 
 ## Commands for delete commit in server
@@ -92,6 +118,7 @@ git clone --branch <branchname> <remote-repo-url>    # Clonar una rama especific
 git push --tags                                      # Publicar todas las etiquetas
 git fetch                                            # Actualizar las referencias con el servidor git
 git checkout HASH <file-name>                        # Revertir el cambio con el HASH de un archivo
+git checkout HEAD~1 -- <file-name>                   # Revertir el cambio con el HASH de un archivo y pasa al staged
 git status -sb                                       # Ver el estado de la rama
 git status -short --branch                           # Ver el estado de la rama
 git pull --all                                       # Traer todo del repositorio
