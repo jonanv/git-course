@@ -5,9 +5,10 @@ Course of git follow Fernando Herrera´s course in DevTalles
 ## Commands Git
 ```
 git --version                                        # Ver la versión de git
+
 git help                                             # Ver comandos ayuda
-git commit                                           # Hacer commit
 git --help config                                    # Ver comandos ayuda de config
+
 git config list                                      # Ver configuraciones
 git config --local --list                            # Ver la configuración del proyecto actual (Local)
 git config --local user.username "John Doope"  
@@ -20,17 +21,22 @@ git config --global user.email "johndoope@gmail.com" # Asignar email de usuario 
 git config --global -e                               # Ver configuraciones globales
 git config -e                                        # Ver configuraciones de proyecto
 git config --global --unset user.name                # Eliminar una configuracion global user.name
+
 git init                                             # Inicializar un repositorio
 git init <name>                                      # Inicializar un repositorio con nombre
+
 git status                                           # Ver los archivos que tienen cambios
 git status --short                                   # Ver los archivos que tienen cambios forma corta
+
 git add <name>                                       # Agregar un archivo al stage
-git commit -m "Coment"                               # Crear un commit con mensaje
+git add .                                            # Agregar todos los archivos al stage
+
 git checkout -- .                                    # Reconstruir el proyecto a como estaba antes
 git brach                                            # Listar las ramas
 git branch <name>                                    # Crear nombre de rama
 git branch -m <name>                                 # Renombrar rama
 git branch -m <old-name> <new-name>                  # Renombrar rama
+
 git diff                                             # Ver los cambios entre archivos
 git diff <file-name>                                 # Ver los cambios entre archivos de un archivo especifico
 git diff --staged                                    # Ver los cambios entre archivos en el stage
@@ -41,31 +47,42 @@ git diff HEAD <branch-name> -- <file-name>           # Ver los cambios entre com
 git diff <hash> <hash>                               # Ver los cambios entre commits con HASH, el hash mas reciente en segundo lugar
 git diff <branch-name> <branch-name>                 # Ver los cambios entre ramas
 git diff <branch-name> <branch-name> -- <file-name>  # Ver los cambios entre ramas de un archivo especifico
+
+git commit                                           # Hacer commit
+git commit -m "Coment"                               # Crear un commit con mensaje
 git commit -am "message"                             # Agregar un commit de forma abreviada (add message)
 git commit --amend -m "message"                      # Reescribir el commit anterior o correguirlo
 git reset --soft HEAD^                               # Revertir el cambio anterior (ejem. ^2)
 git commit --amend                                   # Abre todo el editor para reescribir el commit
 git commit --amend --date="AAAA-MM-DD HH:MM:SS"      # Cambia la fecha de un commit
+
 git reset --soft <65ed0b2>                           # Revertir el cambio anterior con HASH
 git reset --mixed <769efb3>                          # Revertir el cambio anterior, no deja en el stage
 git reset --hard <f710079>                           # Revertir el cambio anterior, destructivo
-git reflog                                           # Muestra todo el historial de commits
+
 git mv destruir-mundo.md salvar-mundo.md             # Renombrar archivo
 git rm salvar-mundo.md                               # Eliminar archivo
+
 git checkout <branch-name>                           # Cambiar de rama
 git checkout -b <branch-name> -f                     # Crar rama y cambiar a rama inmediatamente
+git checkout -- <file-name>                          # Reconstruir el archivo como estaba antes
+
 git switch <branch-name>                             # Cambiar de rama
 git switch -c <branch-name>                          # Crear rama y cambiar a rama inmediatamente
+
 git branch -d <branch-name>                          # Eliminar rama
 git branch -D <branch-name>                          # Eliminar rama forzadamente
 git branch -d <branch-name> -f                       # Eliminar rama forzadamente
+
 git tag <tag-name>                                   # Crear una etiqueta
 git tag                                              # Listar las etiquetas
 git tag -d <tag-name>                                # Eliminar una etiqueta
 git tag -a <tag-name> -m "message"                   # Crear una etiqueta con annotate(-a)
 git tag -a <tag-name> <hash> -m "message"            # Crear una etiqueta a un commit con el HASH
+
 git show <tag-name>                                  # Ver la informacion de un tag
 git show <hash>                                      # Ver la informacion de un commit con el HASH
+
 git stash                                            # Guardar cambios momentaneos
 git stash list                                       # Listar los cambios momentaneos
 git stash pop                                        # Recupera el ultimo stash y lo aplica
@@ -75,17 +92,14 @@ git stash show stash@{0}                             # Muestra la info del stash
 git stash save "message"                             # Crear un stash con un nombre
 git stash list --stat                                # Lista los stash con mas información
 git stash clear                                      # Limpia todos los stash
-git rebase <branch-name>                             # Hacer rebase
-git rebase -i HEAD~4                                 # Hacer rebase itereactivo 4 commits anteriores
-git checkout -- <file-name>                          # Reconstruir el archivo como estaba antes
-git rebase --continue                                # Continuar con el rebase interactivo
-git rebase --abort                                   # La rama se volverá al estado anterior a la rebase interactiva
+
 git revert HEAD                                      # Hacer rollback al commit anterior
 git revert --no-edit HEAD                            # Hacer rollback al commit anterior sin abrir el editor
 git revert -n HEAD                                   # Hacer rollback al commit anterior sin hacer commit
 git revert --staged <hash_del_commit>                # Hacer rollback con el hash del commit para revertir cambios. La bandera --staged es fundamental. Indica a Git que mantenga los cambios en el stage.
 git revert HEAD --no-edit <file-name>                # Hacer rollback al commit anterior de un archivo especifico sin abrir el editor
 git revert -m 1 <hash_del_commit_merge>              # Hacer rollback en git con el hash del merge para revertir cambios. La bandera -m 1 es fundamental. Indica a Git que mantenga la línea principal (la rama en la que estabas cuando hiciste el merge).
+
 git log -S "procesarRemision(remision.id)"           # La opción -S significa "pickaxe search". Git busca todos los commits donde la cantidad de veces que aparece esa cadena cambió.
 git log -2                                           # Ver los ultimos 2 commits (confirmaciones)
 git log -2 README.md                                 # Ver los ultimos 2 commits de un archivo especifico
@@ -95,8 +109,60 @@ git log --since="yesterday" --until="today"          # Ver los commits entre fec
 git log --since="1 week ago" --until="today"         # Ver los commits
 git log --since="15 Jul 2024"                        # Ver los commits
 git log --since="15 July 2024"                       # Ver los commits
+
 git restore --staged <file-name>                     # Quitar un archivo del stage (Area de preparación)
 git restore --staged                                 # Quitar todos los archivos del stage
+
+git merge <branch-name>                              # Hacer merge de una rama (se esta en main, <brach-name> a main)
+git merge <branch-name> main                         # Hacer merge desde otra rama, <branch-name> a main (git marge source destination)
+git merge <branch-name> --ff-only                    # Hacer merge de una rama (se esta en main, <brach-name> a main) forzando el fast-forward
+git merge <branch-name> --no-ff                      # Hacer merge de una rama (se esta en main, <brach-name> a main) forzando el no fast-forward (fucion recursivo)
+git merge --squash <branch-name>                      # Hacer merge de una rama (se esta en main, <brach-name> a main) y aplana los commits en uno solo, se debe hacer commit despues de hacer el merge
+git merge -s octopus <branch-name> <branch-name2> <branch-name3> # Integrar múltiples ramas en una sola fusión (merge) utilizando la estrategia de fusión "octopus" (pulpo). Esta estrategia es útil cuando se desea combinar varias ramas en un solo commit de fusión.
+git merge --abort                                    # Abortar el merge
+
+git rebase <branch-name>                             # Hacer rebase
+git rebase -i HEAD~4                                 # Hacer rebase itereactivo 4 commits anteriores
+git rebase --continue                                # Continuar con el rebase interactivo
+git rebase --abort                                   # La rama se volverá al estado anterior a la rebase interactiva
+git rebase <branch-name> --onto <new-base-branch> <old-base-branch>  # Rebase de una rama sobre otra rama base
+
+git cherry-pick <hash>                               # Aplicar un commit específico de otra rama a la rama actual
+git cherry-pick <hash1> <hash2> <hash3>              # Aplicar varios commits específicos de otra rama a la rama actual
+git cherry-pick -n <hash>                            # Aplicar un commit específico de otra rama a la rama actual sin hacer commit
+git cherry-pick -x <hash>                            # Aplicar un commit específico de otra rama a la rama actual y agregar una referencia al commit original en el mensaje de commit
+git cherry-pick --continue                           # Continuar con el cherry-pick después de resolver conflictos
+git cherry-pick --abort                              # Abortar el cherry-pick
+
+git bisect start                                      # Iniciar el proceso de búsqueda binaria para encontrar un commit defectuoso
+git bisect bad                                        # Marcar el commit actual como defectuoso
+git bisect good                                       # Marcar el commit actual como bueno
+git bisect reset                                      # Finalizar el proceso de búsqueda binaria y volver al estado original
+git bisect good <hash> <hash> <hash> ...              # Marcar varios commits como buenos
+git bisect run <command>                              # Ejecutar un comando en cada commit durante la búsqueda binaria
+
+git worktree add <path> <branch-name>                 # Crear un nuevo árbol de trabajo (worktree) en la ruta especificada y asociarlo a la rama especificada
+cd <path>                                             # Cambiar al directorio del nuevo árbol de trabajo (worktree)
+git worktree list                                     # Listar todos los árboles de trabajo (worktrees) asociados al repositorio actual
+git worktree remove <path>                            # Eliminar un árbol de trabajo (worktree) en la ruta especificada
+
+git submodule add <repository-url> <path>             # Agregar un submódulo al repositorio actual en la ruta especificada
+git submodule status                                  # Ver el estado de los submódulos
+git submodule update --init                           # Inicializar y actualizar los submódulos
+git submodule update --init <submodule-path>          # Inicializar y actualizar un submódulo específico
+git submodule update --init --remote                  # Inicializar y actualizar los submódulos, obteniendo la última versión de cada submódulo desde su repositorio remoto
+git submodule update --remote <submodule-path>        # Actualizar un submódulo específico desde su repositorio remoto
+git submodule --deinit <submodule-path>               # Desinicializar un submódulo específico, eliminando su directorio de trabajo y desasociándolo del repositorio principal
+git rm <submodule-path>                               # Eliminar un submódulo del repositorio principal y eliminar su entrada del archivo .gitmodules
+git init <submodule-path>                             # Inicializar un submódulo específico, creando su directorio de trabajo y configurando su repositorio
+git filter-repo --path <submodule-path> --invert-paths   # Eliminar un submódulo específico de todo el historial de commits del repositorio principal
+git submodule add <new-submodule_path> <new-submodule-url>   # Agregar un nuevo submódulo al repositorio principal en la ruta especificada y asociarlo a la URL del repositorio remoto
+
+git lfs                                               # Instalar Git Large File Storage (LFS) para manejar archivos grandes en el repositorio
+git lfs install                                       # Inicializar Git LFS en el repositorio actual
+git lfs track "*.psd"                                  # Configurar Git LFS para rastrear archivos con la extensión .psd
+git lfs track "*.zip"                                  # Configurar Git LFS para rastrear archivos con la extensión .zip
+git add .gitattributes                                  # Agregar el archivo .gitattributes generado por Git LFS al repositorio
 ```
 
 ## Commands for delete commit in server
@@ -118,6 +184,8 @@ git clone --depth=1 <repo>                           # Clonar un repositorio Git
 
 git clone --branch <branchname> <remote-repo-url>    # Clonar una rama especifica
 
+git clone <repo> new_repo                            # Clonar un repositorio Git en una carpeta con nombre diferente
+
 git push --tags                                      # Publicar todas las etiquetas
 git fetch                                            # Actualizar las referencias con el servidor git
 git checkout HASH <file-name>                        # Revertir el cambio con el HASH de un archivo
@@ -130,6 +198,30 @@ git branch --all                                     # Ver todas las ramas del r
 git branch --a                                       # Ver todas las ramas del repositorio
 git push origin :<branch-name>                       # Eliminar la rama desde el origen
 git remote prune origin                              # Revisa y actualiza las referencias de las ramas
+git remote -v                                        # Ver los remotos del repositorio
+git remote set-url origin git@github-jonanv:jonanv/git-course.git # Cambiar la url del remoto
+git remote add back-up /home/repl/datacamp           # (Añadir un remoto nuevo) Añade el nombre back-up para el repositorio /home/repl/datacamp.
+git reflog                                           # Muestra todo el historial de commits
+git reflog show                                      # Muestra todo el historial de commits
+git reflog show <hash>                               # Muestra todo el historial de commits a partir de un commit especifico
+git reflog expire                                    # Expira las entradas del reflog según la política de expiración predeterminada
+git reflog --since "2 weeks ago" --until "1 week ago"   # Muestra el historial de commits entre fechas
+```
+
+## git filter-repo
+Para eliminar un archivo de todo el historial de commits en Git, puedes usar la herramienta git filter-repo. Esta herramienta permite reescribir el historial de commits y eliminar archivos específicos de manera eficiente. A continuación, se muestra cómo hacerlo:
+
+#### Instalar git-filter-repo
+```pip install git-filter-repo```
+
+#### Remover secret.txt de todo el historial de commits
+```git filter-repo --path secret.txt --invert-paths```
+
+```git filter-repo --path config.init --invert-paths --force```
+
+```
+--path          # Especifica la ruta del archivo o directorio que deseas filtrar. Puedes usar rutas relativas o absolutas.
+--invert-paths  # Indica que deseas eliminar el archivo o directorio especificado en lugar de mantenerlo. Esto significa que todos los commits que contienen ese archivo o directorio serán eliminados del historial.
 ```
 
 ## Create alias
