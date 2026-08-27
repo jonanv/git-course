@@ -146,6 +146,16 @@ cd <path>                                             # Cambiar al directorio de
 git worktree list                                     # Listar todos los árboles de trabajo (worktrees) asociados al repositorio actual
 git worktree remove <path>                            # Eliminar un árbol de trabajo (worktree) en la ruta especificada
 
+git submodule add <repository-url> <path>             # Agregar un submódulo al repositorio actual en la ruta especificada
+git submodule status                                       # Ver el estado de los submódulos
+git submodule update --init                           # Inicializar y actualizar los submódulos
+git submodule update --init --remote                  # Inicializar y actualizar los submódulos, obteniendo la última versión de cada submódulo desde su repositorio remoto
+git submodule update --remote <submodule-path>        # Actualizar un submódulo específico desde su repositorio remoto
+git submodule --deinit <submodule-path>               # Desinicializar un submódulo específico, eliminando su directorio de trabajo y desasociándolo del repositorio principal
+git rm <submodule-path>                               # Eliminar un submódulo del repositorio principal y eliminar su entrada del archivo .gitmodules
+git init <submodule-path>                             # Inicializar un submódulo específico, creando su directorio de trabajo y configurando su repositorio
+git filter-repo --path <submodule-path> --invert-paths   # Eliminar un submódulo específico de todo el historial de commits del repositorio principal
+git submodule add <new-submodule_path> <new-submodule-url>   # Agregar un nuevo submódulo al repositorio principal en la ruta especificada y asociarlo a la URL del repositorio remoto
 ```
 
 ## Commands for delete commit in server
