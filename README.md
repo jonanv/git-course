@@ -147,8 +147,9 @@ git worktree list                                     # Listar todos los árbole
 git worktree remove <path>                            # Eliminar un árbol de trabajo (worktree) en la ruta especificada
 
 git submodule add <repository-url> <path>             # Agregar un submódulo al repositorio actual en la ruta especificada
-git submodule status                                       # Ver el estado de los submódulos
+git submodule status                                  # Ver el estado de los submódulos
 git submodule update --init                           # Inicializar y actualizar los submódulos
+git submodule update --init <submodule-path>          # Inicializar y actualizar un submódulo específico
 git submodule update --init --remote                  # Inicializar y actualizar los submódulos, obteniendo la última versión de cada submódulo desde su repositorio remoto
 git submodule update --remote <submodule-path>        # Actualizar un submódulo específico desde su repositorio remoto
 git submodule --deinit <submodule-path>               # Desinicializar un submódulo específico, eliminando su directorio de trabajo y desasociándolo del repositorio principal
