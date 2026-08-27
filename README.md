@@ -389,6 +389,8 @@ Si no da error → perfecto
 3️⃣ Verifica que quedó cargada
 ```
 ssh-add -l
+
+ssh-add -d ~/.ssh/id_ed25519    # Eliminar del agente ssh
 ```
 
 Debe mostrar algo como:
