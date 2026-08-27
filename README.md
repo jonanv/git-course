@@ -156,6 +156,12 @@ git rm <submodule-path>                               # Eliminar un submódulo d
 git init <submodule-path>                             # Inicializar un submódulo específico, creando su directorio de trabajo y configurando su repositorio
 git filter-repo --path <submodule-path> --invert-paths   # Eliminar un submódulo específico de todo el historial de commits del repositorio principal
 git submodule add <new-submodule_path> <new-submodule-url>   # Agregar un nuevo submódulo al repositorio principal en la ruta especificada y asociarlo a la URL del repositorio remoto
+
+git lfs                                               # Instalar Git Large File Storage (LFS) para manejar archivos grandes en el repositorio
+git lfs install                                       # Inicializar Git LFS en el repositorio actual
+git lfs track "*.psd"                                  # Configurar Git LFS para rastrear archivos con la extensión .psd
+git lfs track "*.zip"                                  # Configurar Git LFS para rastrear archivos con la extensión .zip
+git add .gitattributes                                  # Agregar el archivo .gitattributes generado por Git LFS al repositorio
 ```
 
 ## Commands for delete commit in server
