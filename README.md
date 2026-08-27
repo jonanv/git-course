@@ -140,6 +140,12 @@ git bisect good                                       # Marcar el commit actual 
 git bisect reset                                      # Finalizar el proceso de búsqueda binaria y volver al estado original
 git bisect good <hash> <hash> <hash> ...              # Marcar varios commits como buenos
 git bisect run <command>                              # Ejecutar un comando en cada commit durante la búsqueda binaria
+
+git worktree add <path> <branch-name>                 # Crear un nuevo árbol de trabajo (worktree) en la ruta especificada y asociarlo a la rama especificada
+cd <path>                                             # Cambiar al directorio del nuevo árbol de trabajo (worktree)
+git worktree list                                     # Listar todos los árboles de trabajo (worktrees) asociados al repositorio actual
+git worktree remove <path>                            # Eliminar un árbol de trabajo (worktree) en la ruta especificada
+
 ```
 
 ## Commands for delete commit in server
