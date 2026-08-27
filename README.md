@@ -160,9 +160,9 @@ git submodule add <new-submodule_path> <new-submodule-url>   # Agregar un nuevo 
 
 git lfs                                               # Instalar Git Large File Storage (LFS) para manejar archivos grandes en el repositorio
 git lfs install                                       # Inicializar Git LFS en el repositorio actual
-git lfs track "*.psd"                                  # Configurar Git LFS para rastrear archivos con la extensión .psd
-git lfs track "*.zip"                                  # Configurar Git LFS para rastrear archivos con la extensión .zip
-git add .gitattributes                                  # Agregar el archivo .gitattributes generado por Git LFS al repositorio
+git lfs track "*.psd"                                 # Configurar Git LFS para rastrear archivos con la extensión .psd
+git lfs track "*.zip"                                 # Configurar Git LFS para rastrear archivos con la extensión .zip
+git add .gitattributes                                # Agregar el archivo .gitattributes generado por Git LFS al repositorio
 ```
 
 ## Commands for delete commit in server
